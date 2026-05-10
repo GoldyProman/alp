@@ -1,0 +1,382 @@
+:root {
+  /* Light Theme Variables */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FFFFFF;
+  --text-primary: #111111;
+  --text-secondary: #555555; /* #555 on light bg */
+  --accent-color: #A8CC00;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --btn-text: #0A0A0A;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --text-primary: #FFFFFF;
+  --text-secondary: #F0F0EE; /* #F0F0EE on dark bg */
+  --accent-color: #A8CC00;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --header-bg: rgba(10, 10, 10, 0.85);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-barlow), Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  font-size: 17px;
+}
+
+:root {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6, .condensed {
+  font-family: var(--font-barlow-condensed), Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Typography Scales */
+h1 {
+  font-weight: 800; /* or 700 */
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: clamp(36px, 8vw, 101px); /* Min 36px on web */
+  line-height: 1.05;
+}
+
+h2 {
+  font-weight: 600; /* SemiBold */
+  text-transform: uppercase; /* or title case */
+  font-size: clamp(28px, 4vw, 36px); /* 28-36px */
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-weight: 600; /* SemiBold */
+  text-transform: capitalize;
+  font-size: clamp(20px, 3vw, 24px); /* 20-24px */
+  line-height: 1.3;
+}
+
+p {
+  font-family: var(--font-barlow), Arial, sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: clamp(16px, 1.5vw, 19px); /* 16px min */
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Labels / Tags / Nav */
+.label-tag {
+  font-family: var(--font-barlow-condensed);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(12px, 1.5vw, 14px); /* 12-14px */
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+}
+
+.pill-tag {
+  font-family: var(--font-barlow-condensed);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px; /* between 12-14px */
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  display: inline-block;
+  color: var(--text-secondary);
+}
+
+.nav-text {
+  font-family: var(--font-barlow-condensed);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px; /* 14px */
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+/* Nav Link Underline Hover Effect */
+a.nav-text:not(.no-underline)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color);
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-out;
+}
+
+a.nav-text:not(.no-underline):hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Header Desktop Dealer Button */
+.dealer-btn-desktop {
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.dealer-btn-desktop::after {
+  display: none !important;
+}
+
+.dealer-btn-desktop:hover {
+  background-color: var(--accent-color) !important;
+  color: var(--btn-text) !important;
+}
+
+/* Input Focus States */
+input, textarea, select {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--border-color) !important;
+  box-shadow: none;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3.5vw, 3.5rem);
+}
+
+.section {
+  padding: clamp(1.5rem, 3vw, 3rem) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.flush-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 0; /* Gaps replaced by borders */
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.flush-grid > * {
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Buttons */
+.btn {
+  font-family: var(--font-barlow-condensed);
+  font-weight: 700;
+  text-transform: uppercase !important;
+  font-size: clamp(16px, 2vw, 18px); /* 16-18px */
+  letter-spacing: 0.05em; /* 0.05em */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+[data-theme="light"] .btn-primary::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover::after {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--btn-text) !important;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--text-primary);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 8px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Marquee */
+.marquee-container {
+  background-color: #00E5CC;
+  color: #000000;
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  font-family: var(--font-barlow-condensed);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Hero Background Textures */
+.texture-bg {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--border-color) 0,
+    var(--border-color) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+}
+
+.hero-section-bg {
+  position: relative;
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+  .hero-section-bg {
+    background-attachment: scroll; /* Better performance on mobile/tablets */
+  }
+}
+
+.hero-overlay {
+  display: none;
+}
+
+
+/* Decorative Triangle */
+.ghost-triangle {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 800px;
+  max-height: 800px;
+  opacity: 0.03;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+  fill: none;
+  stroke: var(--text-primary);
+  stroke-width: 2;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* Arrow Slide Animation */
+.arrow-parent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.arrow-parent:hover {
+  gap: 1rem;
+}
+
+.arrow-parent:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Global utility for hiding/showing */
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+}
+@media (min-width: 769px) {
+  .mobile-only { display: none !important; }
+}
+
+/* Hide Next.js Dev Indicator */
+nextjs-portal, 
+[data-nextjs-toast], 
+#nextjs-toast, 
+.nextjs-toast { 
+  display: none !important; 
+}

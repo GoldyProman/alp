@@ -1,0 +1,4 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 10 L10 90 L35 90 L50 60 L65 90 L90 90 Z" fill="#ffffff" />
+  <polygon points="50,60 65,90 35,90" fill="#9fff00" />
+</svg>

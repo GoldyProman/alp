@@ -1,0 +1,48 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "alppower.vercel.app"
+        }
+      ],
+      "destination": "https://www.alpinepowertools.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "alppower.netlify.app"
+        }
+      ],
+      "destination": "https://www.alpinepowertools.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "alpine123.netlify.app"
+        }
+      ],
+      "destination": "https://www.alpinepowertools.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "alpinepowertools.com"
+        }
+      ],
+      "destination": "https://www.alpinepowertools.com/$1",
+      "permanent": true
+    }
+  ]
+}
