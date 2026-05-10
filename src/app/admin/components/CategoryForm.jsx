@@ -54,9 +54,8 @@ export default function CategoryForm({
                 onChange={(e) => set("full_description", e.target.value)} />
             </div>
 
-            <div className="admin-form-grid">
+            <div className="admin-form-group">
               <ImageUpload label="Category Image" value={form.image_url || ""} onChange={(v) => set("image_url", v)} folder="categories" />
-              <ImageUpload label="Banner Image" value={form.banner_url || ""} onChange={(v) => set("banner_url", v)} folder="categories" />
             </div>
 
             <div style={{ background: "var(--admin-surface-2)", border: "1px solid var(--admin-border)", borderRadius: "var(--radius)", padding: "1.25rem", marginBottom: "1.5rem", marginTop: "1rem" }}>

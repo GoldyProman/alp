@@ -104,12 +104,9 @@ export default function ProductClient({ category, product }) {
                 justifyContent: 'center',
                 position: 'relative'
               }}>
-                <Image 
-                  src={`/assets/${product.id === 'turbo-diamond-blade' ? 'diamond_blade.png' : product.id === 'segmented-blade' ? 'diamond_blade.png' : 'product_placeholder.png'}`}
-                  alt={product.id === 'turbo-diamond-blade' ? "Alpine Turbo Diamond Blade for Granite and Tile Cutting" : "Alpine Segmented Diamond Blade for Concrete and Masonry"}
-                  width={500}
-                  height={500}
-                  priority
+                <img 
+                  src={product.image && product.image !== '/assets/placeholder.png' ? product.image : `/assets/${product.id === 'turbo-diamond-blade' ? 'diamond_blade.png' : product.id === 'segmented-blade' ? 'diamond_blade.png' : 'product_placeholder.png'}`}
+                  alt={product.title}
                   style={{ width: '80%', height: '80%', objectFit: 'contain', opacity: 0.8 }}
                 />
               </div>

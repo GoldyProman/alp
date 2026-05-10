@@ -66,7 +66,15 @@ export default function ClientProductsGrid({ categories }) {
                     padding: '1.5rem',
                     borderBottom: '1px solid var(--border-color)'
                   }}>
-                    <div style={{ color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Add image</div>
+                    {category.image && category.image !== '/assets/placeholder.png' ? (
+                      <img 
+                        src={category.image} 
+                        alt={category.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      />
+                    ) : (
+                      <div style={{ color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Add image</div>
+                    )}
                   </div>
 
                   {/* Category Content */}
