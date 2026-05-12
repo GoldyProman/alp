@@ -195,6 +195,7 @@ export default function Header() {
             className="mobile-only"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', padding: '0.5rem' }}
+            aria-label="Open menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

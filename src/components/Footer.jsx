@@ -37,7 +37,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="footer-links-section">
-              <h4 className="footer-col-heading">QUICK LINKS</h4>
+              <h3 className="footer-col-heading">QUICK LINKS</h3>
               <ul className="footer-link-list">
                 <li><Link href="/" className="footer-link">Home</Link></li>
                 <li><Link href="/products" className="footer-link">Products</Link></li>
@@ -49,7 +49,7 @@ export default function Footer() {
 
             {/* Social Media */}
             <div className="footer-links-section">
-              <h4 className="footer-col-heading">SOCIAL MEDIA</h4>
+              <h3 className="footer-col-heading">SOCIAL MEDIA</h3>
               <ul className="footer-link-list">
                 <li><a href="https://youtube.com/@alpinepowertools?si=-LiEV8AbDrbjMJT8" target="_blank" rel="noopener noreferrer" className="footer-link">YouTube</a></li>
                 <li><a href="https://www.instagram.com/alpinepowertools07?igsh=cG1ydzF1em9nM3hz" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a></li>

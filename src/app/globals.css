@@ -3,8 +3,9 @@
   --bg-primary: #FFFFFF;
   --bg-secondary: #FFFFFF;
   --text-primary: #111111;
-  --text-secondary: #555555; /* #555 on light bg */
+  --text-secondary: #444444; /* Improved contrast from #555 */
   --accent-color: #A8CC00;
+  --accent-text: #5D7200; /* WCAG AA 4.5:1 on white */
   --border-color: rgba(0, 0, 0, 0.08);
   --header-bg: rgba(255, 255, 255, 0.85);
   --btn-text: #0A0A0A;
@@ -14,8 +15,9 @@
   --bg-primary: #0a0a0a;
   --bg-secondary: #111111;
   --text-primary: #FFFFFF;
-  --text-secondary: #F0F0EE; /* #F0F0EE on dark bg */
+  --text-secondary: #F0F0EE;
   --accent-color: #A8CC00;
+  --accent-text: #A8CC00; /* Keep bright on dark bg */
   --border-color: rgba(255, 255, 255, 0.08);
   --header-bg: rgba(10, 10, 10, 0.85);
 }
@@ -99,7 +101,7 @@ a:hover {
   text-transform: uppercase;
   font-size: clamp(12px, 1.5vw, 14px); /* 12-14px */
   letter-spacing: 0.1em;
-  color: var(--accent-color);
+  color: var(--accent-text);
 }
 
 .pill-tag {

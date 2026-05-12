@@ -59,11 +59,11 @@ export default function AboutClient() {
               </motion.p>
               <motion.div variants={staggerContainer} style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <motion.div variants={fadeUp}>
-                  <h4 className="nav-text" style={{ color: 'var(--accent-color)', marginBottom: '0.5rem' }}>CONSISTENT QUALITY</h4>
+                  <h3 className="nav-text" style={{ color: 'var(--accent-color)', marginBottom: '0.5rem' }}>CONSISTENT QUALITY</h3>
                   <p>Every tool meets rigorous industrial standards for identical output.</p>
                 </motion.div>
                 <motion.div variants={fadeUp}>
-                  <h4 className="nav-text" style={{ color: 'var(--accent-color)', marginBottom: '0.5rem' }}>DISTRIBUTOR PARTNERSHIP</h4>
+                  <h3 className="nav-text" style={{ color: 'var(--accent-color)', marginBottom: '0.5rem' }}>DISTRIBUTOR PARTNERSHIP</h3>
                   <p>Built on mutual growth, transparency, and clear margins.</p>
                 </motion.div>
               </motion.div>

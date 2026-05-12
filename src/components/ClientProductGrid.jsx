@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -45,13 +46,16 @@ export default function ClientProductGrid({ category }) {
               alignItems: 'center', 
               justifyContent: 'center',
               padding: '1.5rem',
-              borderBottom: '1px solid var(--border-color)'
+              borderBottom: '1px solid var(--border-color)',
+              position: 'relative'
             }}>
               {product.image && product.image !== '/assets/placeholder.png' ? (
-                <img 
+                <Image 
                   src={product.image} 
                   alt={product.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  fill
+                  style={{ objectFit: 'contain', padding: '1.5rem' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               ) : (
                 <div style={{ color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Add image</div>

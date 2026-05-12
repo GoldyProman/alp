@@ -104,10 +104,13 @@ export default function ProductClient({ category, product }) {
                 justifyContent: 'center',
                 position: 'relative'
               }}>
-                <img 
+                <Image 
                   src={product.image && product.image !== '/assets/placeholder.png' ? product.image : `/assets/${product.id === 'turbo-diamond-blade' ? 'diamond_blade.png' : product.id === 'segmented-blade' ? 'diamond_blade.png' : 'product_placeholder.png'}`}
                   alt={product.title}
-                  style={{ width: '80%', height: '80%', objectFit: 'contain', opacity: 0.8 }}
+                  fill
+                  style={{ objectFit: 'contain', padding: '10%' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
                 />
               </div>
             </motion.div>
@@ -135,9 +138,9 @@ export default function ProductClient({ category, product }) {
 
               {/* Step 1: Select Performance Tier */}
               <div style={{ marginBottom: '2.5rem', marginTop: '1.5rem' }}>
-                <h3 style={{ fontSize: '0.85rem', color: '#A8CC00', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.05em' }}>
+                <h2 style={{ fontSize: '0.85rem', color: '#A8CC00', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.05em' }}>
                   1. SELECT PERFORMANCE TIER
-                </h3>
+                </h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {tiers.map((tier, idx) => {
                     const isActive = selectedTierIdx === idx;
@@ -179,9 +182,9 @@ export default function ProductClient({ category, product }) {
 
               {/* Step 2: Select Size */}
               <div style={{ marginBottom: '2.5rem' }}>
-                <h3 style={{ fontSize: '0.85rem', color: '#A8CC00', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.05em' }}>
+                <h2 style={{ fontSize: '0.85rem', color: '#A8CC00', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.05em' }}>
                   2. SELECT SIZE
-                </h3>
+                </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '0.75rem' }}>
                   {currentTier.sizes.map((size) => {
                     const isActive = selectedSize === size;
@@ -231,9 +234,9 @@ export default function ProductClient({ category, product }) {
 
               {/* Key Specifications Table */}
               <div style={{ borderTop: '1px solid var(--border-color)', marginTop: '3rem', paddingTop: '2rem' }}>
-                <h3 style={{ fontSize: '0.85rem', color: '#A8CC00', fontWeight: 700, marginBottom: '1.5rem', letterSpacing: '0.05em' }}>
+                <h2 style={{ fontSize: '0.85rem', color: '#A8CC00', fontWeight: 700, marginBottom: '1.5rem', letterSpacing: '0.05em' }}>
                   TECHNICAL SPECIFICATIONS
-                </h3>
+                </h2>
                 <div style={{ display: 'grid', gap: '0.75rem' }}>
                   {product.specs?.map((spec, i) => (
                     <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
